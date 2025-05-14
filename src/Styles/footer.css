@@ -1,0 +1,171 @@
+.footer-container {
+    background-color: #fdfaf3;
+    color: #6a4f4b;
+    width: 100%;
+    padding-top: 20px;
+    margin-top: 75px;
+
+}
+
+.footer-logo-wrapper {
+    text-align: center;
+    margin-bottom: -12px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-top: 20px;
+   
+   }
+
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 180px;
+
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.footer-column h3 {
+    font-size: 1.3em;
+    color: #764D0F;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a,
+.footer-column p a {
+    text-decoration: none;
+    color: #764D0F;
+   
+}
+
+
+
+.footer-column p {
+    margin-bottom: -12px;
+    line-height: 1.6;
+    color: #764D0F;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #6a4f4b;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+
+
+.social-icons a[aria-label="Instagram"] {
+    color: #E4405F
+    ;
+}
+
+.social-icons a[aria-label="Facebook"] {
+    color: #1877F2;
+}
+
+.social-icons a[aria-label="google"] {
+    background: linear-gradient(to right, #4285F4 25%, #EA4335 25%, #FBBC05 50%, #34A853 75%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  
+
+.social-icons a[aria-label="Instagram"]:hover,
+.social-icons a[aria-label="Facebook"]:hover,
+.social-icons a[aria-label="WhatsApp"]:hover {
+    opacity: 0.8;
+}
+
+
+.footer-bottom {
+    text-align: center;
+
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #7f6a60;
+}
+
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+        min-width: unset;
+        padding: 0;
+    }
+
+    .footer-column:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer-column h3 {
+        font-size: 1.2em;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-logo {
+        max-width: 120px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 0px 30px 15px;
+        margin-top: 2px;
+    }
+
+    .footer-column h3 {
+        font-size: 1.1em;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8em;
+    }
+
+    .footer-column {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+        min-width: unset;
+        padding: 0;
+        margin-left: -164px;
+    }
+}

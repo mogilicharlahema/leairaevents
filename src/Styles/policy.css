@@ -1,0 +1,80 @@
+.privacy-policy {
+    padding: 0rem 1rem;
+    background-color: #fffdf9;
+    margin-top: -25px;
+    color: #764D0F;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.privacy-policy h1 {
+    text-align: center;
+    color: #764D0F;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-policy p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.note {
+    background-color: #fff4e5;
+    border-left: 4px solid #764D0F;
+    padding: 1rem;
+    margin: 1.5rem 0;
+
+}
+
+.consent {
+    background-color: #fcefe6;
+    border-left: 4px solid #764D0F;
+    padding: 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.privacy-policy ol {
+    padding-left: 1.2rem;
+}
+
+.privacy-policy ol li {
+    margin-bottom: 1.2rem;
+}
+
+.privacy-policy ol li strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #764D0F;
+}
+
+@media (max-width: 768px) {
+    .privacy-policy h1 {
+        font-size: 1.6rem;
+    }
+
+    .privacy-policy p,
+    .privacy-policy ol li {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .privacy-policy {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .privacy-policy h1 {
+        font-size: 1.4rem;
+    }
+
+    .note,
+    .consent {
+        font-size: 0.9rem;
+    }
+}

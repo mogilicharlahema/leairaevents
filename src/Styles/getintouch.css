@@ -1,0 +1,337 @@
+.get-in-touch-container {
+  max-width: 1100px;
+  margin: -19px auto;
+  padding: 30px;
+
+  box-sizing: border-box;
+}
+
+.main-heading-git {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: bold;
+  background-image: linear-gradient(to right, #DC901C, #764D0F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  text-align: center;
+  color: transparent;
+}
+
+.content-wrapper-git {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.left-panel-git {
+  flex: 1.1;
+  min-width: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel-background-image-git {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 580px;
+  object-fit: cover;
+  margin-left: -82px;
+}
+
+.image-overlay-content-git {
+  position: absolute;
+  width: 70%;
+  top: 44%;
+  left: 7%;
+  right: 5%;
+  bottom: 5%;
+  height: auto;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: clamp(20px, 3.5vw, 30px);
+  box-sizing: border-box;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.overlay-heading-git {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: bold;
+  background-image: linear-gradient(to right, #DC901C, #764D0F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+  margin-top: -20px;
+
+  line-height: 1.2;
+  text-align: center;
+  color: transparent;
+}
+
+.overlay-paragraph-git {
+  font-size: clamp(0.85em, 2vw, 0.95em);
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: -15px;
+  margin-top: -25px;
+}
+
+.contact-details-git {
+  font-size: clamp(0.8em, 1.8vw, 0.9em);
+  color: #333;
+}
+
+.contact-details-git .address-label-git {
+  font-weight: bold;
+  color: #c88a2c;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.contact-details-git p {
+  margin-bottom: clamp(4px, 0.8vw, 6px);
+  line-height: 1.5;
+}
+
+.contact-details-git a {
+  color: #333;
+  text-decoration: underline;
+}
+
+
+
+.right-panel-git {
+  flex: 0.9;
+  min-width: 300px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-git {
+  width: 100%;
+  max-width: 480px;
+
+  margin-top: 30px;
+  margin-left: -65px;
+}
+
+.form-group-git {
+  margin-bottom: 28px;
+}
+
+.form-group-git label {
+  display: block;
+  font-size: 1.1em;
+  color: #764D0F;
+  margin-bottom: 31px;
+  font-weight: bold;
+  margin-left: -1px;
+  margin-top: 15px
+}
+
+.form-group-git input[type="text"],
+.form-group-git input[type="email"],
+.form-group-git input[type="tel"],
+.form-group-git textarea {
+  width: 100%;
+  padding: 8px 0 5px 0;
+  border: none;
+  border-bottom: 1px solid #764D0F;
+  background-color: transparent;
+  font-size: clamp(0.85em, 2vw, 0.95em);
+  color: #764D0F;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  text-align: center;
+}
+
+.form-group-git textarea {
+  padding: 8px;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.input-helper-text-git {
+  display: block;
+
+  color: #764D0F;
+  margin-top: -29px;
+  font-style: normal;
+  margin-left: 166px;
+  font-size: 20px;
+}
+
+.form-group-git input:focus,
+.form-group-git textarea:focus {
+  outline: none;
+  border-bottom-color: #764D0F;
+}
+
+.submit-button-git {
+  background-color: #764D0F;
+  color: #ffffff;
+  padding: 12px 35px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 25px auto 0;
+  width: 50%;
+}
+
+
+
+@media (max-width: 992px) {
+  .main-heading-git {
+    font-size: 2.4em;
+  }
+
+  .left-panel-git {
+    flex-basis: 100%;
+  }
+
+  .right-panel-git {
+    flex-basis: 100%;
+  }
+
+  .image-overlay-content-git {
+    top: 20%;
+    bottom: 3%;
+    left: 3%;
+    right: 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .get-in-touch-container {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .content-wrapper-git {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .left-panel-git,
+  .right-panel-git {
+    flex: none;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .left-panel-git {
+    margin-bottom: 30px;
+  }
+
+  .panel-background-image-git {
+    height: 400px;
+  }
+
+  .image-overlay-content-git {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    width: calc(100% - 20px);
+    margin: -60px auto 0 auto;
+    padding: 20px;
+  }
+
+  .main-heading-git {
+    font-size: 2em;
+    margin-bottom: 25px;
+  }
+
+  .overlay-heading-git {
+    font-size: clamp(1.6em, 3.5vw, 1.8em);
+  }
+
+  .right-panel-git {
+    padding: 0;
+  }
+
+  .submit-button-git {
+    padding: 10px 25px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .get-in-touch-container {
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .main-heading-git {
+    font-size: 1.8em;
+  }
+
+  .image-overlay-content-git {
+    padding: 15px;
+    margin-top: -40px;
+    margin-left: 22px;
+  }
+
+  .overlay-heading-git {
+    font-size: 1.5em;
+    margin-top: -7px;
+    margin-left: 35px
+  }
+
+  .form-group-git {
+    margin-bottom: 20px;
+  }
+
+  .submit-button-git {
+    width: 65%;
+  }
+
+  .input-helper-text-git {
+    display: block;
+
+    color: #777;
+    margin-top: -21px;
+    font-style: normal;
+    margin-left: 57px;
+    font-size: 15px;
+  }
+  .panel-background-image-git {
+    height: 358px;
+    width: 235px;
+    margin-left: 54px;
+  }
+  .overlay-paragraph-git {
+    font-size: clamp(0.85em, 2vw, 0.95em);
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: -15px;
+    margin-top: -10px;
+    margin-left: 39px;
+  }
+  .contact-details-git {
+    font-size: clamp(0.8em, 1.8vw, 0.9em);
+    color: #333;
+    margin-top: 10px;
+    margin-left: 40px;
+  }
+  .right-panel-git {
+    padding: 0;
+    margin-left: 97px;
+    margin-top: -55px;}
+}
