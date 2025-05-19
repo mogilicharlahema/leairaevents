@@ -275,7 +275,7 @@
 @media (max-width: 480px) {
   .get-in-touch-container {
     padding: 15px;
-    margin: 15px auto;
+    margin: -18px auto;
   }
 
   .main-heading-git {
@@ -289,10 +289,8 @@
   }
 
   .overlay-heading-git {
-    /* font-size: 1.5em;
-    margin-top: -7px;
-  
-    margin-left: 35px */
+         font-size: 1.8em;
+        margin-top: -15px;
 
     display: none;
   }
@@ -319,7 +317,7 @@
   .panel-background-image-git {
  height: 401px;
         width: 315px;
-        margin-left: 25px;
+        margin-left:4px;
   }
   .overlay-paragraph-git {
            font-size: clamp(0.85em, 2vw, 0.95em);

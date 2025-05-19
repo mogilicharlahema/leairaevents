@@ -167,6 +167,7 @@
     .testimonials-main-title {
       font-size: 2em;
       margin-left: 20px;
+      margin-top: -30px;
     }
     .testimonial-name {
       font-size: 30px;
@@ -178,7 +179,8 @@
     .testimonial-card {
       padding: 6px;
         margin-left: -7px;
-      width: 337px
+      width:285px;
+      margin-top: -10px;
     }
     .testimonials-section-container {
     background-color: #EADBCB;
