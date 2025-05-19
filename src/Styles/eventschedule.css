@@ -197,11 +197,13 @@
 }
 
 .calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
-  text-align: center;
-  margin-left: -100px;
+    display: grid
+;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    text-align: center;
+    margin-right: 45px;
+    margin-left: -85px
 }
 
 .calendar-grid .day-name {
@@ -510,7 +512,7 @@ display: block;
   .time-slots-container {
     grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
     gap: 8px;
-    margin-right: 40px
+    margin-right:110px
   }
 
   .time-slot {

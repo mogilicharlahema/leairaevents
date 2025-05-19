@@ -12,7 +12,7 @@ const GallerySection=()=>{
     }
     return(
         <>
-        <h1 className="gallery-title">Gallery</h1>
+        <h1 className="gallery-titles">Gallery</h1>
         <div className="gallery-container">
             <img className="marriagepic" src={event1}></img>
             <img   className="bdaypic" src={event2}></img>

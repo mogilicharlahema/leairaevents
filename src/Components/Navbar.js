@@ -14,7 +14,7 @@ const mainDesktopNavItems = [
 
 const allMobileNavItems = [
     { id: 1, label: "Home", path: "/" },
-    { id: 2, label: "Gallery", path: "/gallery" },
+    { id: 2, label: "Gallery", path: "/gallery-section" },
     { id: 3, label: "Concerts", path: "/concerts" },
     { id: 4, label: "Events", path: "/explore-more" },
     { id: 4, label: "ContactUs", path: "/Getintouch" },

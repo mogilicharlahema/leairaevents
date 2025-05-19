@@ -9,8 +9,8 @@
     margin-top: 50px;
     margin-left: 70px;
 }
-.gallery-title{
-    font-size: clamp(2rem, 5vw, 2.8rem);
+.gallery-titles{
+    font-size:40px;
     font-weight: bold;
     background-image: linear-gradient(to right, #DC901C, #764D0F);
     -webkit-background-clip: text;
@@ -48,7 +48,7 @@
         gap: 10px;
         flex-direction: column;
         margin-top: -15px;
-        margin-left: 18px;
+      margin-left: 54px
     }
     .gallery-title{
         font-size: clamp(2rem, 5vw, 2.8rem);

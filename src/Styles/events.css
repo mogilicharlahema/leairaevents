@@ -1,5 +1,5 @@
 .event-section-container {
-    padding: 0px 20px;
+   
     text-align: center;
     background-color: #FFFFFF;
 }
@@ -228,7 +228,7 @@
     }
 
     .event-card-description {
-        font-size: 13px;
+        font-size:20px;
     }
 
     .explore-more-button {

@@ -1,6 +1,6 @@
 .client-section {
     text-align: center;
-    padding: 0px 20px;
+   
     background-color: #fff;
    
 }
@@ -120,6 +120,7 @@
     }
     .client-logos {
         gap: 15px;
+        margin-top: 20px;
     }
 }
 
