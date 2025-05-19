@@ -120,7 +120,7 @@ const GetInTouchSection = () => {
               <p>+91 9177-05-7705</p>
               <p>
                 <a href="mailto:Operations@leairaevents.com">
-                  Operations@leairaevents.com
+                  operations@leairaevents.com
                 </a>
               </p>
               <p>

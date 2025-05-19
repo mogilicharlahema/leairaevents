@@ -1,22 +1,25 @@
 import React from "react";
-import "../Styles/herosection.css"; 
-import heroimage from "../Assets/heroimage.png";
+import "../Styles/herosection.css"; // Ensure this path is correct
+import heroimage from "../Assets/heroimage.png"; // Replace with the actual path to your image
 
 const HeroSection = () => {
     return (
-        <div className="about-section-wrapper"> 
-            <div className="hero-container">
-                <div className="hero-text-content">
-                    <h1 className="leaira-title">Le Aira Events</h1>
-                    <p className="hero-description">
-                        Events are about creating magic and creating memories, not just
-                        about showing up. We compile a collection of remarkable
-                        occurrences that elevate everyday situations to something
-                        truly remarkable.
-                    </p>
+        <div className="hero-section-container">
+            <div className="hero-image-wrapper">
+                <img src={heroimage} alt="Lavish event setup with traditional Indian decor" />
+            </div>
+            <div className="hero-stats-card">
+                <div className="stat-item">
+                    <p className="stat-number">81</p>
+                    <p className="stat-label">Events Organized</p>
                 </div>
-                <div className="hero-image-content">
-                    <img src={heroimage} alt="Vibrant concert with stage lights" />
+                <div className="stat-item">
+                    <p className="stat-number">70+</p>
+                    <p className="stat-label">Happy Clients</p>
+                </div>
+                <div className="stat-item">
+                    <p className="stat-number">1+ Years</p>
+                    <p className="stat-label">Experience</p>
                 </div>
             </div>
         </div>

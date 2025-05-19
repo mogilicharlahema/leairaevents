@@ -1,7 +1,7 @@
 .explore-events-section {
-  /* padding: 40px 20px; */
   text-align: center;
   background-color: #ffffff;
+ padding-bottom: 40px;
 }
 
 .explore-events-title {
@@ -26,30 +26,74 @@
 }
 
 .event-item {
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
+  background-color: transparent;
+  width: 100%;
+  height: 400px;
+  /* perspective: 1000px; */
+  border-radius: 40px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
-.event-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.event-item-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.event-item:hover .event-item-inner {
+  transform: rotateY(180deg);
+}
+
+.event-card-front,
+.event-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card-front {
+  background-color: #F5EFE7;
+  color: #764D0F;
+}
+
+.event-card-back {
+  background-color: #764D0F;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.event-card-description {
+  font-size: 0.9em;
+  line-height: 1.4;
+  text-align: left;
+  max-height: 100%;
 }
 
 .event-image {
   width: 100%;
-  height: 360px;
+  height: calc(100% - 60px);
   object-fit: cover;
   display: block;
+  border-radius: 20px;
 }
 
 .event-label-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   background-color: #F5EFE7;
   min-height: 60px;
@@ -77,18 +121,18 @@
   font-weight: bold;
   border-radius: 30px;
   cursor: pointer;
-  width: 15%;
+  min-width: 200px;
   margin-top: 20px;
   box-shadow: 0 4px 10px rgba(138, 101, 59, 0.3);
-  margin-left: 50px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.book-event-button:hover {
+.explore-book-event-button:hover {
   background-color: #73522D;
   transform: translateY(-2px);
 }
 
-.book-event-button:active {
+.explore-book-event-button:active {
   transform: translateY(0px);
 }
 
@@ -102,8 +146,14 @@
     font-size: 2.5em;
   }
 
+  .event-item {
+    height: 300px;
+  }
   .event-image {
-    height: 240px;
+    height: calc(100% - 55px);
+  }
+  .event-label-container {
+    min-height: 55px;
   }
 }
 
@@ -119,20 +169,20 @@
     max-width: 700px;
   }
 
-  .event-image {
-    height: 220px;
+  .event-item {
+    height: 280px;
   }
-
+  .event-image {
+     height: calc(100% - 50px);
+  }
   .event-label {
     font-size: 0.95em;
     padding: 8px 10px;
   }
-
   .event-label-container {
-    min-height: 55px;
+    min-height: 50px;
   }
-
-  .book-event-button {
+  .explore-book-event-button {
     padding: 12px 30px;
     font-size: 1em;
   }
@@ -154,17 +204,22 @@
     max-width: 400px;
   }
 
+  .event-item {
+    height: 320px;
+  }
   .event-image {
-    height: 230px;
+    height: calc(100% - 50px);
   }
 
   .event-label {
     font-size: 0.9em;
   }
 
-  .book-event-button {
+  .explore-book-event-button {
     padding: 12px 25px;
     font-size: 1em;
+    width: auto;
+    min-width: 180px;
   }
 }
 
@@ -176,8 +231,6 @@
   .explore-events-title {
     font-size: 28px;
     margin-bottom: 20px;
-    text-align: center;
-    margin-left: 56px
   }
 
   .events-grid {
@@ -185,46 +238,26 @@
     max-width: 100%;
   }
 
-  .event-image {
-    height: 260px;
+  .event-item {
+    height: 300px;
   }
-
+  .event-image {
+     height: calc(100% - 50px);
+  }
   .event-label-container {
     min-height: 50px;
   }
-
   .event-label {
     font-size: 0.85em;
     padding: 8px;
   }
-
-  .book-event-button {
+  .explore-book-event-button {
     padding: 10px 20px;
     font-size: 0.95em;
     width: 80%;
     max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
-
-  .event-item {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    left: 35px;
-  }
-  .explore-book-event-button {
-  background-color: #764D0F;
-  color: white;
-  border: none;
-  padding: 15px 35px;
-  font-size: 1.1em;
-  font-weight: bold;
-  border-radius: 30px;
-  cursor: pointer;
-  width: 86%;
-  margin-top: 20px;
-  box-shadow: 0 4px 10px rgba(138, 101, 59, 0.3);
-  margin-left: 50px;
-}
 }

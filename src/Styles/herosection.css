@@ -1,114 +1,78 @@
+.hero-section-container {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
 
+.hero-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-  .about-section-wrapper {
-    padding: 40px 20px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
+.hero-stats-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 15px;
+  background-color: #ffffff;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+  padding: 0 5px;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #764D0F;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 1.6rem;
+  color: #764D0F;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .hero-section-container {
+    margin: 20px 15px;
+    border-radius: 10px;
   }
 
-  .hero-container {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    max-width: 1200px;
-    width: 100%;
+  .hero-stats-card {
+    padding: 15px 10px;
   }
 
-  .hero-text-content {
-    flex: 2;
-    margin-left: 30px;
-    margin-top: -40px;
+  .stat-number {
+    font-size: 1.6rem;
   }
 
-  .leaira-title {
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: bold;
-    background: linear-gradient(to right, #DC901C, #764D0F);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
-    margin-bottom: 20px;
-    line-height: 1.2;
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats-card {
+    padding: 12px 8px;
   }
 
-  .hero-description {
-    font-size: 30px;
-    color: #764D0F;
-    line-height: 1.6;
+  .stat-number {
+  font-size: 18px
   }
 
-  .hero-image-content {
-    flex: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .stat-label {
+    font-size: 0.75rem;
   }
-
-  .hero-image-content img {
-    max-width: 70%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-left: 90px;
-  }
-
-  @media (max-width: 992px) {
-    .hero-container {
-      gap: 20px;
-    }
-    .leaira-title {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-    }
-    .hero-description {
-      font-size: clamp(0.9rem, 2vw, 1.1rem);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .about-section-wrapper {
-      padding: 30px 15px;
-    }
-    .hero-container {
-      flex-direction: column;
-      text-align: center;
-    }
-    .hero-text-content {
-      margin-bottom: 30px;
-      flex-basis: auto;
-      width: 100%;
-    }
-    .hero-image-content {
-      flex-basis: auto;
-      width: 100%;
-    }
-    .hero-image-content img {
-      max-width: 90%;
-      margin: 0 auto;
-    }
-    .leaira-title {
-      font-size: clamp(1.6rem, 6vw, 2.2rem);
-    }
-    .hero-description {
-      font-size: clamp(0.85rem, 3.5vw, 1rem);
-    }
-  }
-  @media (max-width: 480px){
-    .hero-text-content{
-        margin-left: 10px;
-        margin-top: -50px;
-    }
-    .hero-image-content img{
-        margin-top: -55px;
-    }
-    .hero-description{
-        font-size: 15px;
-        margin-top: -15px;
-    }
-    .leaira-title{
-        font-size: 40px;
-    }
-  }
+}

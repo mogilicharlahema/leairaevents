@@ -1,7 +1,5 @@
 .event-schedule-section {
-  /* display: flex; */
-  /* max-width: 1000px; */
-  /* margin: 40px auto; */
+ 
   background-color: #ffffff;
   border-radius: 0;
   box-shadow: none;
@@ -137,7 +135,7 @@
 }
 
 .date-time-selector {
-  margin-top: 160px;
+  margin-top:160px;
   margin-bottom: 30px;
   width: 80%;
   margin-left: -500px;
@@ -146,7 +144,7 @@
 .sub-title {
   font-size: 40px;
   color: #754C24;
-  margin-top: 24px;
+  margin-top:-110px;
   font-weight: bold;
   margin-bottom: 60px;
   text-align: center;
@@ -282,28 +280,25 @@
 }
 
 .book-now-btn {
-  display: block;
-  min-width: 180px;
-  width: auto;
-  margin: -36px 0 auto;
-  padding: 12px 30px;
-  background-color: #8B5A2B;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  font-size: 1em;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+display: block;
+    min-width: 250px;
+    width: auto;
+    margin: -88px 0 auto;
+    padding: 12px 30px;
+    background-color: #8B5A2B;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-.book-now-btn:hover {
-  background-color: #A06B40;
 }
 
 
-/* TABLET VIEW */
+
 @media (max-width: 1199px) {
   .eventimage {
     margin-left: 100px;
@@ -353,12 +348,12 @@
   .form-container {
     width: 100%;
     max-width: 550px;
-    /* Limit form width on tablet */
+   
   }
 
   .form-content-wrapper {
     position: static;
-    /* Override absolute positioning */
+  
     top: auto;
     left: auto;
     bottom: auto;
@@ -366,7 +361,7 @@
     max-width: none;
     margin-left: 0;
     padding: 0 10px;
-    /* Add some padding */
+  
   }
 
   .main-title {
@@ -374,7 +369,7 @@
     font-size: 30px;
   }
 
-  /* Reset placeholder positioning for tablet/mobile */
+ 
   .form-group input::placeholder {
     text-align: left;
     top: 0;
@@ -384,7 +379,7 @@
   .form-group input[type="email"],
   .form-group input[type="tel"] {
     padding-bottom: 6px;
-    /* Reset padding-bottom */
+   
   }
 
 
@@ -410,40 +405,40 @@
     min-width: auto;
     width: 100%;
     max-width: 400px;
-    /* Limit calendar width */
+   
   }
 
   .calendar-grid .date {
     height: auto;
     aspect-ratio: 1 / 1;
-    /* Square date cells for tablet */
+   
   }
 
   .time-slots-container {
     grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
-    /* Responsive columns */
+
     width: 100%;
     max-width: 400px;
     margin-left: 0;
     margin-top: 0;
-    /* Gap handled by parent flex */
+  
     gap: 10px;
   }
 
   .time-slot {
     width: auto;
-    /* Let grid control width */
+   
     padding: 10px 6px;
   }
 
   .book-now-btn {
     margin: 30px auto;
-    /* Center button */
+  
   }
 }
 
-/* MOBILE VIEW */
-@media (max-width: 576px) {
+
+@media (max-width:480px) {
   .event-schedule-section {
     padding: 15px;
   }
@@ -487,8 +482,10 @@
   }
 
   .sub-title {
-    font-size: 18px;
-    margin-bottom: 15px;
+           font-size: 18px;
+        margin-top: -58px;
+        margin-bottom: 9px;
+        margin-left: 20px
   }
 
   .calendar-container {
@@ -527,6 +524,6 @@
     padding: 12px 20px;
     width: 75%;
     max-width: 300px;
-    margin-left: 69px
+    margin-left:40px
   }
 }

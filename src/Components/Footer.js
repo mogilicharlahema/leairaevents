@@ -37,7 +37,7 @@ const FooterSection = () => {
         <div className="footer-column">
           <h3>Address</h3>
           <p>+91 9177-05-7705</p>
-          <p><a href="mailto:Operations@leairaevents.com">Operations@leairaevents.com</a></p>
+          <p><a href="mailto:Operations@leairaevents.com">operations@leairaevents.com</a></p>
           <p>
             4th Floor, And 5, Plot No: 4,<br />
             Arunodaya Colony, Vittal Rao Nagar,<br />
@@ -70,7 +70,7 @@ const FooterSection = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} events. All rights are reserved</p>
+        <p>© 2024 events. All rights are reserved</p>
       </div>
     </footer>
   );

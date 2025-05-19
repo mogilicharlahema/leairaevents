@@ -1,61 +1,98 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import workpic2 from "../Assets/workpic2.png";
 import "../Styles/work.css";
 
 const WorkSection = () => {
-  const workStepsData = [
-    {
-      number: "1",
+  const workData = { // Renamed from workSteps to avoid conflict with the array
+    clientMeeting: {
       title: "Client Meeting",
       description:
-        "Our approach to communication involves efficient face-to-face or in-person meetings to understand your needs and problems, focusing on attentive discussion and active listening to establish trust, define expectations, and provide solutions.",
+        "Our communication strategy involves effective face-to-face or in-person meetings to understand your needs and problems, fostering trust, setting expectations, and offering solutions.",
     },
-    {
-      number: "2",
+    planning: {
       title: "Planning",
       description:
-        "The work plan serves as a baseline budget and detailed timetable that directs the execution, oversight, and management of the project. Throughout the project lifecycle, it guarantees stakeholder comprehension, controls expenses, and assesses financial performance.",
+        "The work plan is a comprehensive project management plan that sets the budget, timeline, and expectations for the project, ensuring stakeholder understanding and cost control.",
     },
-    {
-      number: "3",
+    siteVisit: {
       title: "Site Visit",
       description:
-        "When organizing an event, a site visit is essential since it gives you a thorough grasp of the venue's layout, spatial dynamics, and logistical needs. Ensuring both practical and aesthetic alignment, this aids in making well-informed judgments on guest movement, key element placement, and event flow.",
+        "A site visit is crucial for event planning, providing a comprehensive understanding of the venue's layout, spatial dynamics, and logistical needs, enabling informed decisions on guest movement, key element placement, and event flow.",
     },
-    {
-      number: "4",
+    execution: {
       title: "Execution",
       description:
-        "Effective, timely, and coordinated tasks are ensured by the interdependence between strategic planning and execution. Achieving consistent, successful results in any effort requires striking a balance between rigorous planning and focused execution.",
+        "Strategic planning and execution are interdependent, ensuring effective, timely, and coordinated tasks. Balancing rigorous planning with focused execution is crucial for consistent, successful results.",
     },
+  };
+
+  // Define the order of steps for rotation.
+  // This array defines THE steps themselves, not their initial positions.
+  const orderedSteps = [
+    workData.clientMeeting,
+    workData.planning,
+    workData.siteVisit,
+    workData.execution,
   ];
 
-  const numItems = workStepsData.length;
+  const numSteps = orderedSteps.length;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % numSteps);
+    }, 3000); // Change step every 3 seconds (2 seconds content + 1 second animation/buffer)
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, [numSteps]);
+
+  // Determine which step's content goes into which visual slot based on currentIndex
+  // The goal is to make the content "rotate" through the fixed visual positions.
+  // Original visual order: ClientMeeting (Top), Execution (Left), Planning (Right), SiteVisit (Bottom)
+
+  const clientMeetingSlotContent = orderedSteps[currentIndex % numSteps];
+  const executionSlotContent = orderedSteps[(currentIndex + 3) % numSteps]; // Execution is visually "before" CM in the rotation
+  const planningSlotContent = orderedSteps[(currentIndex + 1) % numSteps]; // Planning is visually "after" CM
+  const siteVisitSlotContent = orderedSteps[(currentIndex + 2) % numSteps];
+
 
   return (
-    <section className="work-section-container">
-      <h1 className="work-section-main-title">How we work</h1>
-      <div
-        className="work-steps-list"
-        style={{ '--num-items': workStepsData.length }}
+    <div className="work-container">
+      <h2 className="work-main-title">How we work</h2>
+      <div className="work-grid">
+        {/*
+          The `key` prop is crucial here. When the key changes (because the title of the content changes),
+          React will unmount the old component and mount a new one, re-triggering the CSS animation.
+        */}
+        <div className="work-step work-step-client-meeting" key={clientMeetingSlotContent.title}>
+          <h3>{clientMeetingSlotContent.title}</h3>
+          <p>{clientMeetingSlotContent.description}</p>
+        </div>
 
-      >
-        {workStepsData.map((step, index) => (
-          <div
-            className="work-step-item"
-            key={index}
-          
-          >
-            <div className="work-step-number-circle">
-              <span>{step.number}</span>
-            </div>
-            <div className="work-step-content">
-              <h3 className="work-step-title">{step.title}</h3>
-              <p className="work-step-description">{step.description}</p>
-            </div>
-          </div>
-        ))}
+        <div className="work-step work-step-execution" key={executionSlotContent.title}>
+          <h3>{executionSlotContent.title}</h3>
+          <p>{executionSlotContent.description}</p>
+        </div>
+
+        <div className="work-image-wrapper">
+          <img
+            src={workpic2}
+            alt="Event setup showcasing work process"
+            className="work-center-image"
+          />
+        </div>
+
+        <div className="work-step work-step-planning" key={planningSlotContent.title}>
+          <h3>{planningSlotContent.title}</h3>
+          <p>{planningSlotContent.description}</p>
+        </div>
+
+        <div className="work-step work-step-site-visit" key={siteVisitSlotContent.title}>
+          <h3>{siteVisitSlotContent.title}</h3>
+          <p>{siteVisitSlotContent.description}</p>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

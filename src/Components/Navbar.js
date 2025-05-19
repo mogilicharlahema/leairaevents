@@ -1,36 +1,33 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import lairaLogo from '../Assets/lairalogo.png';
-import '../Styles/navbar.css';
+import lairaLogo2 from '../Assets/lairalogo2.png'; 
+import '../Styles/navbar.css'; 
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-const leftNavItems = [
+const mainDesktopNavItems = [
+    { id: 1, label: "Home", path: "/" },
+    { id: 2, label: "Gallery", path: "/gallery-section" },
+    { id: 3, label: "Concerts", path: "/concerts" },
+    { id: 4, label: "Events", path: "/explore-more" },
+      { id: 4, label: "ContactUs", path: "/Getintouch" }
+];
+
+const allMobileNavItems = [
     { id: 1, label: "Home", path: "/" },
     { id: 2, label: "Gallery", path: "/gallery" },
     { id: 3, label: "Concerts", path: "/concerts" },
-];
-
-const rightNavItems = [
     { id: 4, label: "Events", path: "/explore-more" },
-    { id: 5, label: "Book An Event", path: "/event-schedule" }
+    { id: 4, label: "ContactUs", path: "/Getintouch" },
+    { id: 5, label: "Book an Event", path: "/event-schedule" } 
 ];
-
-const allNavItems = [
-    // { id: 0, label: "Home", path: "/" },
-    ...leftNavItems,
-    ...rightNavItems,
-];
-
-
 
 const NavbarSection = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const navRef = useRef();
+    const navRef = useRef(null);
     const navigate = useNavigate();
 
-    const toggleMobileMenu = (event) => {
-        event.stopPropagation();
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(prev => !prev);
     };
 
     const closeMobileMenu = () => {
@@ -39,114 +36,70 @@ const NavbarSection = () => {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (navRef.current && !navRef.current.contains(event.target)) {
+            if (isMobileMenuOpen && navRef.current && !navRef.current.contains(event.target)) {
                 closeMobileMenu();
             }
         };
 
-        if (isMobileMenuOpen) {
-            document.addEventListener('mousedown', handleClickOutside);
-        } else {
-            document.removeEventListener('mousedown', handleClickOutside);
-        }
-
+        document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [isMobileMenuOpen]);
 
-    const handleBookConsultClick = () => {
+    const handleBookEventClick = () => {
         closeMobileMenu(); 
         navigate("/event-schedule");
+    };
+
+    const handleMobileLinkClick = (path) => {
+        navigate(path);
+        closeMobileMenu();
     };
 
     return (
         <div className="navbar-wrapper">
             <nav className="navbar-container" ref={navRef}>
+              
+                <Link to="/" className="navbar-logo-link" onClick={closeMobileMenu}>
+                    <img src={lairaLogo2} alt="Laira Events Logo" className="logo-image" />
+                </Link>
+
+                <div className="nav-links-desktop-center">
+                    {mainDesktopNavItems.map(item => (
+                        <NavLink
+                            key={item.id}
+                            to={item.path}
+                            className={({ isActive }) => isActive ? "nav-link-item active" : "nav-link-item"}
+                        >
+                            {item.label}
+                        </NavLink>
+                    ))}
+                </div>
+                <button
+                    className="book-event-button-desktop"
+                    onClick={handleBookEventClick}
+                >
+                    Book an Event
+                </button>
+
                 <button className="hamburger-icon" onClick={toggleMobileMenu} aria-label="Toggle menu">
                     {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
                 </button>
-
-                <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                    <img src={lairaLogo} alt="Laira Events Logo" className="logo" />
-                </Link>
-
-                <div className="nav-links">
-                    <div className="nav-links-left">
-                        {leftNavItems.map(item => (
+                {isMobileMenuOpen && (
+                    <div className="mobile-nav-menu">
+                        {allMobileNavItems.map(item => (
                             <NavLink
                                 key={item.id}
                                 to={item.path}
-                                className="nav-link-item"
-                                style={({ isActive }) => isActive ? { fontWeight: 'bold', } : {}}
-                                onClick={closeMobileMenu}
+                                className={({ isActive }) => isActive ? "mobile-nav-link-item active" : "mobile-nav-link-item"}
+                                onClick={() => handleMobileLinkClick(item.path)}
                             >
                                 {item.label}
                             </NavLink>
                         ))}
                     </div>
-
-                    <div className="nav-links-right">
-                        {rightNavItems.map(item => {
-                            if (item.label === "Book An Event") {
-                                return (
-                                    <button
-                                        key={item.id}
-                                        className="nav-link-item book-event-button"
-                                        onClick={handleBookConsultClick}
-                                    >
-                                        {item.label}
-                                    </button>
-                                );
-                            } else {
-                                return (
-                                    <NavLink
-                                        key={item.id}
-                                        to={item.path}
-                                        className="nav-link-item"
-                                        style={({ isActive }) => isActive ? { fontWeight: 'bold', } : {}}
-                                        onClick={closeMobileMenu}
-                                    >
-                                        {item.label}
-                                    </NavLink>
-                                );
-                            }
-                        })}
-                    </div>
-                </div>
-
-                <div className={`mobile-nav-menu ${isMobileMenuOpen ? "active" : ""}`}>
-                    {allNavItems.map(item => {
-                        if (item.label === "Book An Event") {
-                            return (
-                                <NavLink
-                                    key={item.id}
-                                    to={item.path}
-                                    className="mobile-nav-link-item"
-                                    onClick={() => {
-                                        closeMobileMenu();
-                                        navigate(item.path);
-                                    }}
-                                >
-                                    {item.label}
-                                </NavLink>
-                            );
-                        }
-                         else{
-                            return (
-                                <NavLink
-                                    key={item.id}
-                                    to={item.path}
-                                    className="mobile-nav-link-item"
-                                    style={({ isActive }) => isActive ? { backgroundColor: '#f0f0f0', fontWeight: 'bold' } : {}}
-                                    onClick={closeMobileMenu}
-                                >
-                                    {item.label}
-                                </NavLink>
-                            );
-                         }
-                    })}
-                </div>
+                )}
             </nav>
         </div>
     );

@@ -176,14 +176,15 @@
       font-size: 15px;
     }
     .testimonial-card {
-        padding: 6px;
-        margin-left: 4px;
+      padding: 6px;
+        margin-left: -7px;
+        width: 285px
     }
     .testimonials-section-container {
     background-color: #EADBCB;
     text-align: center;
     margin-top: 30px;
-    width: 115%;
+    width:88%;
     margin-left: 5px;
   }
   .testimonial-image, .testimonial-image-placeholder {

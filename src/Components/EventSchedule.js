@@ -223,7 +223,7 @@ const EventScheduleSection = () => {
                             <textarea
                                 id="message"
                                 name="message"
-                                rows="4"
+                                rows="10"
                                 placeholder="Enter your message (optional)"
                                 value={formData.message}
                                 onChange={handleChange}

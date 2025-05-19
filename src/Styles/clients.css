@@ -1,0 +1,141 @@
+.client-section {
+    text-align: center;
+    padding: 0px 20px;
+    background-color: #fff;
+   
+}
+
+.client-title {
+    font-size: 2.8rem;
+    color: #C78F12;
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+.client-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+    margin-top: -50px;
+}
+
+.client-logo-item {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.client-logo-item img {
+    display: block;
+}
+
+.suits-logo, .lebestow-logo {
+    padding: 0;
+    border: none;
+}
+.suits-logo img, .lebestow-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lkr-logo, .vedantu-logo, .mindclues-logo {
+   
+    padding: 15px;
+}
+.lkr-logo img, .vedantu-logo img, .mindclues-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
+
+@media (max-width: 1200px) {
+    .client-logo-item {
+        width: 140px;
+        height: 140px;
+    }
+    .lkr-logo, .vedantu-logo, .mindclues-logo {
+        padding: 12px;
+    }
+    .client-logos {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 992px) {
+    .client-title {
+        font-size: 2.4rem;
+        margin-bottom: 50px;
+    }
+    .client-logo-item {
+        width: 120px;
+        height: 120px;
+    }
+    .lkr-logo, .vedantu-logo, .mindclues-logo {
+        padding: 10px;
+    }
+    .client-logos {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .client-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .client-logo-item {
+        width: 100px;
+        height: 100px;
+    }
+    .lkr-logo, .vedantu-logo, .mindclues-logo {
+        padding: 8px;
+    }
+    .client-logos {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .client-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .client-logo-item {
+        width: 90px;
+        height: 90px;
+    }
+    .lkr-logo, .vedantu-logo, .mindclues-logo {
+        padding: 7px;
+    }
+    .client-logos {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    .client-title {
+        font-size: 1.6rem;
+    }
+    .client-logo-item {
+        width: 80px;
+        height: 80px;
+    }
+    .lkr-logo, .vedantu-logo, .mindclues-logo {
+        padding: 6px;
+    }
+    .client-logos {
+        gap: 10px;
+        margin-top: -17px
+    }
+}
