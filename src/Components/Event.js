@@ -42,13 +42,13 @@ const EventSection = () => {
                 {eventsData.map((event) => (
                     <article key={event.id} className="event-card">
                         <div className="event-card-inner">
-                            <div className="event-card-front">
+                            <div className="event-card-front"> 
                                 <img
                                     src={event.image}
                                     alt={event.alt}
                                     className="card-face-image card-image-front"
                                 />
-                                <div className="event-card-label-wrapper">
+                                <div className="event-card-label-wrapper">  
                                     <p className="event-card-label">{event.label}</p>
                                 </div>
                             </div>

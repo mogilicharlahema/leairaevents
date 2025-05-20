@@ -1,81 +1,139 @@
-.marriagepic,.bdaypic,.partypic{
-    width: 450px;
-    height: 420px;
-    border-radius: 10px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-.gallery-container{
+
+.gallery-section-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
     display: flex;
-    gap: 15px;
-    margin-top: 50px;
-    margin-left: 70px;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
 }
-.gallery-titles{
-    font-size:40px;
+
+.gallery-title {
+    font-size: clamp(2.2rem, 5vw + 1rem, 3.5rem);
     font-weight: bold;
     background-image: linear-gradient(to right, #DC901C, #764D0F);
     -webkit-background-clip: text;
     background-clip: text;
+    color: transparent;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
-    margin-top:-18px;
-   
     line-height: 1.2;
     text-align: center;
-    color: transparent;
+    margin-bottom: 40px;
 }
-.view-btn{
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 300px;
+    max-width: 450px;
+    min-width: 280px;
+}
+
+.view-btn {
     background-color: #764D0F;
     color: #FFFFFF;
     border: none;
-    padding: 15px;
+    padding: 15px 30px;
     font-size: 18px;
     font-weight: bold;
     border-radius: 25px;
     cursor: pointer;
-    align-self: flex-end;
     text-transform: capitalize;
-    margin-left: 600px;
-    width: 20%;
-    margin-top: 30px
+    min-width: 180px;
+    width: auto;
+    max-width: 90%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-@media (max-width: 480px){
-    .marriagepic,.bdaypic,.partypic{
-        width: 289px;
-        height: 250px;
-        border-radius: 10px;
+
+.view-btn:hover {
+    background-color: #5c3c0c;
+}
+
+.view-btn:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 991px) {
+    .gallery-title {
+        margin-bottom: 30px;
     }
-    .gallery-container{
-        display: flex;
-        gap: 10px;
+    .gallery-container {
+        gap: 15px;
+    }
+    .gallery-image {
+        height: 300px;
+        flex-basis: 280px;
+    }
+    .view-btn {
+        padding: 12px 25px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery-section-wrapper {
+        padding: 30px 15px;
+    }
+    .gallery-title {
+        font-size: clamp(2rem, 6vw + 0.5rem, 2.8rem);
+        margin-bottom: 25px;
+    }
+    .gallery-container {
         flex-direction: column;
-        margin-top: -15px;
-      margin-left:16px
+        align-items: center;
+        gap: 20px;
     }
-    .gallery-title{
-        font-size: clamp(2rem, 5vw, 2.8rem);
-        font-weight: bold;
-        background-image: linear-gradient(to right, #DC901C, #764D0F);
-        -webkit-background-clip: text;
-        background-clip: text;
-        text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
-        margin-top: 80px;
-       
-        line-height: 1.2;
-        text-align: center;
-        color: transparent;
+    .gallery-image {
+        height: 280px;
+        width: 100%;
+        max-width: 450px;
+        flex-basis: auto;
     }
-    .view-btn{
-        background-color: #764D0F;
-        color: #FFFFFF;
-        border: none;
-        padding: 8px;
-        font-size: 18px;
-        font-weight: bold;
-        border-radius: 25px;
-        cursor: pointer;
-      
-        text-transform: capitalize;
-        margin-left: 63px;
-        width: 62%;
-        margin-top: 15px
+    .view-btn {
+        padding: 12px 20px;
+        font-size: 16px;
+        width: 70%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-section-wrapper {
+        padding: 20px 10px;
+    }
+    .gallery-title {
+        font-size: clamp(1.8rem, 7vw + 0.2rem, 2.5rem);
+        margin-bottom: 20px;
+    }
+    .gallery-container {
+        gap: 15px;
+    }
+    .gallery-image {
+        height: 250px;
+    }
+    .view-btn {
+        padding: 10px 15px;
+        font-size: 15px;
+        width: 80%;
     }
 }

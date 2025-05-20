@@ -13,7 +13,7 @@ import g8 from "../Assets/g8.png";
 const GalleryViewSection = () => {
     return (
         <section className="gallery-view-section">
-            <h2 className="gallery-title">Gallery</h2>
+            <h2 className="gallery-section-title">Gallery</h2>
             <div className="gallery-grid">
                
                 <div className="gallery-item item-1">

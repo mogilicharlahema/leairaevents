@@ -5,22 +5,25 @@ import event3 from "../Assets/event3.png";
 import "../Styles/gallery.css";
 import { useNavigate } from "react-router-dom";
 
-const GallerySection=()=>{
-    const navigate=useNavigate()
-    const handleViewBtnClick=()=>{
-        navigate("/gallery-section")
-    }
-    return(
-        <>
-        <h1 className="gallery-titles">Gallery</h1>
-        <div className="gallery-container">
-            <img className="marriagepic" src={event1}></img>
-            <img   className="bdaypic" src={event2}></img>
-            <img className="partypic" src={event3}></img>
-        </div>
-        <button onClick={handleViewBtnClick} className="view-btn">View More</button>
-        </>
-    )
-}
+const GallerySection = () => {
+    const navigate = useNavigate();
+    const handleViewBtnClick = () => {
+        navigate("/gallery-section");
+    };
 
-export default GallerySection
+    return (
+        <div className="gallery-section-wrapper"> {/* Added wrapper */}
+            <h1 className="gallery-title">Gallery</h1> {/* Corrected class name for consistency */}
+            <div className="gallery-container">
+                <img className="gallery-image" src={event1} alt="Marriage celebration" />
+                <img className="gallery-image" src={event2} alt="Birthday party" />
+                <img className="gallery-image" src={event3} alt="Group celebration" />
+            </div>
+            <button onClick={handleViewBtnClick} className="view-btn">
+                View More
+            </button>
+        </div>
+    );
+};
+
+export default GallerySection;
